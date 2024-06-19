@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.nav-prev,
+.nav-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  color: white;
+  font-size: 24px;
+  transition: background-color 0.6s ease;
+  user-select: none;
+}
+
+.nav-prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.nav-next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.slide-number {
+  color: #f2f2f2;
+  font-size: 14px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.fade {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-prev,
+  .nav-next {
+    font-size: 18px;
+    padding: 12px;
+  }
+}
